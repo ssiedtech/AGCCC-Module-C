@@ -4,7 +4,7 @@ import pipwerks from '@/assets/scorm-api-wrapper.js';
 const store = createStore({
   state: {
     pageNum: 1,
-    totalPages: [34, 22, 48, 20, 18, 25, 25],
+    totalPages: [4, 22, 48, 20, 18, 25, 25],
     lessonNum: 1,
     home: true,
     postTest: false,
@@ -21,13 +21,12 @@ const store = createStore({
     examInfo: '',
     examAnswers: [],
     lessonTitles: [
-      "<b>A.1</b> Communicate Army HR Doctrine",
-      "<b>A.2</b> Brigade S1 Roles and Management",
-      "<b>A.3</b> Communicate HRC Overview",
-      "<b>A.4</b> Introduce HR Information Systems",
-      "<b>A.5</b> Employ S1NET",
-      "<b>A.6</b> HR Planning Requirements",
-      "Module A Post-Test"
+      "Manage Enlisted Promotions",
+      "Manage Line of Duty (LOD) Investigations",
+      "Manage Military Pay and Allowances",
+      "Manage Officer Promotions",
+      "Manage the Evaluations Reporting System",
+      "Manage the HRC Information Management System (HRC-IMS)"
     ],
     lessonsCompleted: [
       false,
@@ -96,6 +95,7 @@ const store = createStore({
       }
     },
     changeLesson(state, payload) {
+      console.log("changing to lesson: ", payload)
       state.lessonNum = payload
       state.pageNum = 1
       state.missedCOL = 0

@@ -1,7 +1,7 @@
 <template>
     <div class="frame-content">
         <div class="header1-area">
-            <img class="left-line" src="../assets/line-left.svg">
+            <!-- <img class="left-line" src="../assets/line-left.svg"> -->
         </div>
         <div class="header3-area">
             <nav-comp v-if="!$store.state.home && !$store.state.completed" />
@@ -17,7 +17,9 @@
                     {{ $store.state.pageNum }}/{{ $store.state.totalPages[$store.state.lessonNum - 1] }}
                 </span>
             </div>
-            <img class="right-line" src="../assets/line-right.svg">
+            <div v-if="!this.isHome" class="total-percent-lesson">
+                <div class="progress"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -71,21 +73,25 @@ export default {
                     return defineAsyncComponent(() => import(`@/components/pages/connectionLostPage`));
             }
         },
+        progress() {
+            return (this.$store.state.pageNum / this.$store.state.totalPages[this.$store.state.lessonNum - 1] * 100) + "%"
+        },
+        isHome() {
+            return this.$store.state.home
+        }
     }
 }
 </script>
 
 <style>
 .frame-content {
-    background-color: #0f162b;
+    background-color: #282828;
     font-size: 2.3vh;
     width: 100%;
     height: 100%;
-    border-radius: 19px;
-    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.35);
     display: grid;
     grid-template-rows: 15% 75% 10%;
-    grid-template-columns: 0.4fr 10fr 1fr;
+    grid-template-columns: 0.4fr 10fr 1.5fr;
     grid-template-areas:
         "header1 content header3"
         ". content ."
@@ -104,12 +110,14 @@ export default {
 .content-area {
     height: 92%;
     width: 95%;
+    /* border: 1px solid red; */
 }
 
 .header1-area {
     height: 100%;
     width: 100%;
     grid-area: header1;
+    /* border: 1px solid green; */
 }
 
 .header3-area {
@@ -123,28 +131,16 @@ export default {
     width: 100%;
     grid-area: footer3;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
     /* gap: 25%; */
-}
-
-.left-line {
-    height: 70%;
-    margin-left: 50%;
-    animation-name: fadeIn;
-    animation-duration: 1.2s;
-}
-
-.right-line {
-    height: 100%;
-    width: 45px;
-    animation-name: fadeIn;
-    animation-duration: 1.2s;
+    /* border: 1px solid blue; */
 }
 
 .page-counter {
-    width: 45%;
     align-self: center;
-    text-align: right;
+    font-size: 2vmin;
 }
 
 @keyframes fadeIn {
@@ -167,10 +163,12 @@ export default {
     /* font-size: 3vh; */
     font-size: 3vmin;
     margin-bottom: 6.4vmin;
+    text-align: center;
 }
 
 .body-text {
     font-size: 2vmin;
+    text-align: center;
 }
 
 .homebutton {
@@ -186,6 +184,35 @@ export default {
     font-size: 100%;
     cursor: pointer;
     z-index: 1;
+}
+
+/* .total-percent-lesson { 
+    border-radius: 10px;
+    position: absolute;
+    bottom: 3%;
+    right: 2%;
+    z-index: 2;
+    background: #BEBEBF;
+    width: 10%;
+    height: 1%;
+} */
+
+.total-percent-lesson { 
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    background: #BEBEBF;
+    width: 80%;
+    height: 10%;
+}
+
+.progress {
+    border-radius: 10px;
+    background: #1f5373;
+    width: v-bind(progress);
+    z-index: 3;
+    transition: width .3s;
+    height: 100%;
 }
 
 @media(max-width: 1600px) {
