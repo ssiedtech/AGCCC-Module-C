@@ -93,7 +93,8 @@ export default {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: 15% 75% 10%;
+  /* grid-template-rows: 15% 75% 10%; */
+  grid-template-rows: 12% 78% 10%;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-areas:
     "header header header header"
@@ -103,8 +104,10 @@ export default {
 
 .header-area {
   grid-area: header;
-  background-color: #19213f;
-  /* border: 1px solid black; */
+  /* background-color: #19213f; */
+  background-color: #282828;
+  border-bottom: 1px solid #e8e8e8;
+  box-shadow: 1.2px 3px 2px black;
 }
 
 .frame-area {
@@ -112,7 +115,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0a1026;
+  /* background-color: #0a1026; */
+  background-color: #282828;
   height: 100%;
 }
 
@@ -120,17 +124,19 @@ export default {
   /* background-color: #24476b */
   height: 90%;
   width: 95%;
+  background-color: #282828;
 }
 
 .footer-area {
   grid-area: footer;
-  background-color: #0a1026;
-  /* border: 1px solid black; */
+  /* background-color: #0a1026; */
+  background-color: #282828;
+  /* border: 1px solid red; */
 }
 
 .nav-area {
   grid-area: nav;
-  /* border: 1px solid black; */
-  background-color: #0a1026;
+  /* background-color: #0a1026; */
+  background-color: #282828;
 }
 </style>
