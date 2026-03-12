@@ -20,6 +20,7 @@ const store = createStore({
     grade: 0,
     examInfo: '',
     examAnswers: [],
+    showNotes: false,
     lessonTitles: [
       "Manage Enlisted Promotions",
       "Manage Line of Duty (LOD) Investigations",

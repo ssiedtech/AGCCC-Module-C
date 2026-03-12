@@ -10,16 +10,20 @@
     </div>
 
     <div class="icons">
-      <img class="notes-icon" src="../assets/notes.png">
+      <img @click="$store.state.showNotes = !$store.state.showNotes" class="notes-icon" src="../assets/notes.png">
       <img class="crest-icon" src="../assets/ags_crest.png">
     </div>
   </div>
+  <notes-comp v-show="$store.state.showNotes" />
 </template>
 
 <script>
+import notesComp from "./notesComp.vue"
+
 export default {
   name: 'headerComp',
   components: {
+    notesComp,
   },
   methods: {
     goHome() {
