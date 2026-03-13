@@ -2,13 +2,27 @@
     <div @click="$store.state.showNotes = !$store.state.showNotes" class="notesContainer">
         <div class="notesBox">
             <div class="contentBox">
-                <div class="notesText" id="notes-comp"></div>
-                <!-- <div class="boxContainer">
-                    <div class="box1"></div>
-                    <div class="box2"></div>
-                    <div class="box3"></div>
-                    <div class="box4"></div>
-                </div> -->
+                <div class="boxContainer">
+
+                    <div class="box1">
+                        <div class="lines1"></div>
+                    </div>
+
+                    <div class="box2">
+                        <div class="lines2"></div>
+                    </div>
+
+                    <div class="notesText" id="notes-comp"></div>
+
+                    <div class="box3">
+                        <div class="lines3"></div>
+                    </div>
+
+                    <div class="box4">
+                        <div class="lines4"></div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
@@ -80,10 +94,9 @@ export default {
 
 .notesText {
     font-size: 2vmin;
-    height: 100%;
     overflow: scroll;
     padding: 8px;
-    /* border: 1px solid red; */
+    grid-area: text;
 }
 
 .contentBox {
@@ -99,49 +112,74 @@ export default {
     grid-template-rows: 5% 90% 5%;
     grid-template-columns: 5% 90% 5%;
     grid-template-areas:
-        "box1 . box2"
-        ". . ."
-        "box3 . box4";
+        "box1 text box2"
+        ". text ."
+        "box3 text box4";
+    /* border: 1px solid red; */
 }
 
 .box1 {
     grid-area: box1;
-    width: 100%;
-    height: 100%;
-    border-top: 1px solid white;
-    border-left: 1px solid white;
-    animation-delay: 0.3s;
-    animation: grow 1s;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .box2 {
     grid-area: box2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.box3 {
+    grid-area: box3;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.box4 {
+    grid-area: box4;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.lines1 {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    animation-delay: 0.3s;
+    animation: grow 1.5s;
+}
+
+.lines2 {
     width: 100%;
     height: 100%;
     border-top: 1px solid white;
     border-right: 1px solid white;
     animation-delay: 0.3s;
-    animation: grow 1s;
+    animation: grow 1.5s;
 }
 
-.box3 {
-    grid-area: box3;
+.lines3 {
     width: 100%;
     height: 100%;
     border-bottom: 1px solid white;
     border-left: 1px solid white;
     animation-delay: 0.3s;
-    animation: grow 1s;
+    animation: grow 1.5s;
 }
 
-.box4 {
-    grid-area: box4;
+.lines4 {
     width: 100%;
     height: 100%;
     border-bottom: 1px solid white;
     border-right: 1px solid white;
     animation-delay: 0.3s;
-    animation: grow 1s;
+    animation: grow 1.5s;
 }
 
 </style>

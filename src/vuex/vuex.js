@@ -21,6 +21,7 @@ const store = createStore({
     examInfo: '',
     examAnswers: [],
     showNotes: false,
+    inLesson: false,
     lessonTitles: [
       "Manage Enlisted Promotions",
       "Manage Line of Duty (LOD) Investigations",
@@ -108,6 +109,7 @@ const store = createStore({
       state.home = true
       state.completed = false
       state.navLock = false
+      state.showNotes = false
     },
     goPostTest(state) {
       state.lessonNum = state.lessonTitles.length
