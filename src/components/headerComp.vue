@@ -10,7 +10,7 @@
     </div>
 
     <div class="icons">
-      <img @click="$store.state.showNotes = !$store.state.showNotes" class="notes-icon" src="../assets/notes.png">
+      <img @click="this.toggleNotes()" class="notes-icon" src="../assets/notes.png">
       <img class="crest-icon" src="../assets/ags_crest.png">
     </div>
   </div>
@@ -30,6 +30,11 @@ export default {
       if (!this.$store.state.postTest && !this.$store.state.completed)
         this.$store.commit('goHome')
     },
+    toggleNotes() {
+      if(!this.$store.state.home) {
+        this.$store.state.showNotes = !this.$store.state.showNotes;
+      }
+    }
   }
 }
 </script>
