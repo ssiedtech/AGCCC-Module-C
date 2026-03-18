@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div class="course-title">MODULE B <br>Provide HR Services</div>
+    <div class="course-title">MODULE C <br>Provide HR Services</div>
 
     <div class="button-container">
       <span v-for="(titles, index) in $store.state.lessonTitles" :key="titles">
