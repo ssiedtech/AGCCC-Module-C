@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div class="course-title">MODULE C <br>Provide HR Services</div>
+    <div class="course-title">MODULE C <br>Coordinate Personnel Support</div>
 
     <div class="button-container">
       <span v-for="(titles, index) in $store.state.lessonTitles" :key="titles">
@@ -67,7 +67,7 @@ export default {
   /* border: 1px solid red; */
 }
 
-.button-container {
+/* .button-container {
   display: grid;
   justify-self: center;
   grid-template-rows: 33% 33% 33%;
@@ -75,8 +75,18 @@ export default {
   grid-auto-flow: column;
   width: 90%;
   height: 25%;
-  /* border: 1px solid blue; */
+  border: 1px solid blue;
   margin-left: 10%;
+} */
+
+.button-container {
+  display: flex;
+  align-self: flex-end;
+  width: 90%;
+  height: 25%;
+  /* border: 1px solid blue; */
+  justify-content: center;
+  /* margin-left: 10%; */
 }
 
 .lesson,

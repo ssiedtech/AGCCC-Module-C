@@ -4,7 +4,7 @@ import pipwerks from '@/assets/scorm-api-wrapper.js';
 const store = createStore({
   state: {
     pageNum: 1,
-    totalPages: [4, 22, 48, 20, 18, 25, 25],
+    totalPages: [4, 32],
     lessonNum: 1,
     home: true,
     postTest: false,
@@ -23,12 +23,8 @@ const store = createStore({
     showNotes: false,
     inLesson: false,
     lessonTitles: [
-      "Manage Enlisted Promotions",
-      "Manage Line of Duty (LOD) Investigations",
-      "Manage Military Pay and Allowances",
-      "Manage Officer Promotions",
-      "Manage the Evaluations Reporting System",
-      "Manage the HRC Information Management System (HRC-IMS)"
+      "Manage Command Interest Programs at the S-1 Level",
+      "Manage Unit Morale, Welfare and Recreation (MWR) Operations",
     ],
     lessonsCompleted: [
       false,
