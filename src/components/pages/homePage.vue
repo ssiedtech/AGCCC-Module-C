@@ -56,7 +56,7 @@ export default {
 
 <style>
 
-.content {
+/* .content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,20 +64,22 @@ export default {
   gap: 10%;
   width: 100%;
   height: 100%;
+  border: 1px solid red;
+} */
+
+.content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10%;
+  width: 100%;
+  height: 80%;
+  bottom: 0;
+  left: 0;
   /* border: 1px solid red; */
 }
-
-/* .button-container {
-  display: grid;
-  justify-self: center;
-  grid-template-rows: 33% 33% 33%;
-  grid-template-columns: 50% 50%;
-  grid-auto-flow: column;
-  width: 90%;
-  height: 25%;
-  border: 1px solid blue;
-  margin-left: 10%;
-} */
 
 .button-container {
   display: flex;
@@ -86,7 +88,6 @@ export default {
   height: 25%;
   /* border: 1px solid blue; */
   justify-content: center;
-  /* margin-left: 10%; */
 }
 
 .lesson,
@@ -118,6 +119,7 @@ export default {
   text-align: center;
   font-weight: bold;
   letter-spacing: .3vmin;
+  /* border: 1px solid red; */
 }
 
 .checkbox {
