@@ -1,9 +1,9 @@
 <template>
   <div class="page" id="content">
-    <div class="title">Scope</div>
+    <div class="title">Summary – LSA #2</div>
     <div class="body-text">
       <p>
-        The intended outcome of this lesson is to produce officers who can confidently prepare and provide an MWR support plan in their future assignments. The lesson begins by reviewing a baseline of doctrinal concepts that are expected to be familiar to all US officers regardless of their basic branch. Information added to this foundation focuses on considerations S-1s must take into account when planning and providing an MWR support plan.
+        During this block of instruction, we have reviewed Responsible Agencies, Roles and Responsibilities for MWR Support and Battlefield Flow.
       </p>
     </div>
   </div>
@@ -29,5 +29,8 @@ export default {
 <style scoped>
 .graphic {
   width: 75%;
+}
+.body-text {
+  text-align: left;
 }
 </style>

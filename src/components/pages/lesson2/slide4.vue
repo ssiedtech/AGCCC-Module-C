@@ -1,23 +1,28 @@
 <template>
   <div class="page" id="content">
-    <div class="title">Concrete Experience</div>
+    <div class="title">Human Resources Support</div>
     <div class="body-text">
       <img class="graphic" src="../../../assets/image10.png">
     </div>
+    <p><b>For additional information you may refer to FM 4-1, Figure 1-1 and Para. 1-20 to 1-21.</b></p>
   </div>
 
   <!-- NOTES -->
   <Teleport to="#notes-comp">
     <p>
-      <b>Motivator:</b> One of the quickest ways to sabotage your credibility with your customers, boss and rating chain is to mess up promotions. Promotions are a very public event and directly impact your rater's and senior rater's reputation. Consequently, some officers who have mismanaged the promotion system have been relieved. Promotion of personnel is essential in the life of our Army. The Army needs and will continue to need NCOs to fill its ranks, but also a system by which to promote these NCOs to various jobs and levels of responsibility. The enlisted promotion system exists to ensure sufficient personnel exist at various ranks to meet the needs of the Army.
+      Human resources professionals must execute two fundamental core competencies in providing HR support.  As depicted in figure 1-1, each of the two core competencies includes subordinate key functions, which contribute to the success of the core competency. 
     </p>
 
     <p>
-      <b>Note:</b> Review the “Beetle Bailey's Promotion” slide. Generate thoughts and reflect upon experiences (garrison and deployed) where enlisted promotions had an impact on mission accomplishment. What could be the second and third order effects because of improper administration of enlisted promotions? You will have 10 minutes to brainstorm your response. Write your questions at the top of the response list (this will make it easier when the results are revisit at the end of the lesson).
+      ***This graphic emphasizes the critical role of personnel information management as the connective force supporting the execution of all HR core competencies and subordinate key functions.
     </p>
 
     <p>
-      <b>NOTE:</b> This CE is directly relatable to administering enlisted promotions and selections for Soldiers within units. Generate many topics from the cartoon. Keep those in mind as you continue through the lesson, many will be discussed again.
+      Success on the battlefield depends, in part, on the effective management of HR support.  Human resources operations enhance combat power by providing information and support to both commanders and Soldiers.  Human resources support concepts serve two major areas of concentration:  support for commanders and units (manning) and support to Soldiers (sustaining Soldiers).  Each subordinate key function can be described in terms of command support and Soldier support activities.
+    </p>
+
+    <p>
+      Human resources professionals, units, and staffs perform the core competencies and subordinate key functions at all levels.
     </p>
   </Teleport>
 
