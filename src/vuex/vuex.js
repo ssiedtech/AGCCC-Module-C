@@ -29,10 +29,6 @@ const store = createStore({
     lessonsCompleted: [
       false,
       false,
-      false,
-      false,
-      false,
-      false
     ],
   },
   mutations: {
