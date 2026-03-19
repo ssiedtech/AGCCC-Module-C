@@ -30,4 +30,7 @@ export default {
 .graphic {
   width: 75%;
 }
+.body-text {
+  text-align: left;
+}
 </style>
