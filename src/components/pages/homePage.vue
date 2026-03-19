@@ -56,17 +56,6 @@ export default {
 
 <style>
 
-/* .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10%;
-  width: 100%;
-  height: 100%;
-  border: 1px solid red;
-} */
-
 .content {
   position: absolute;
   display: flex;
