@@ -2,13 +2,11 @@
   <div class="page" id="content">
     <div class="title">Morale, Welfare, & Recreation (MWR) Program (2 of 3)</div>
     <div class="body-text">
-      <p>
-        <ul>
-          <li>The Army MWR program is a quality-of-life program that directly supports readiness by providing a variety of community, Soldier, and Family support programs, activities, and services</li>
-          <li>MWR programs offered at Army garrisons are based on the needs of authorized patrons who work and reside there</li>
-          <li>MWR programs are classified by category, which are determined by their effect on the military mission and their ability to generate revenue</li>
-        </ul>
-      </p>
+      <ul>
+        <li>The Army MWR program is a quality-of-life program that directly supports readiness by providing a variety of community, Soldier, and Family support programs, activities, and services</li>
+        <li>MWR programs offered at Army garrisons are based on the needs of authorized patrons who work and reside there</li>
+        <li>MWR programs are classified by category, which are determined by their effect on the military mission and their ability to generate revenue</li>
+      </ul>
     </div>
   </div>
 
@@ -48,5 +46,8 @@ export default {
 }
 .body-text {
   text-align: left;
+}
+li {
+  margin-bottom: 15px;
 }
 </style>

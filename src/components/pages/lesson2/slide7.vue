@@ -2,13 +2,11 @@
   <div class="page" id="content">
     <div class="title">Morale, Welfare, & Recreation (MWR) Program (3 of 3)</div>
     <div class="body-text">
-   <p>
-        <ul>
-          <li>Fosters community pride, Soldier morale, and Family wellness </li>
-          <li>Eases the impact of unique aspects of military life</li>
-          <li>Only minimum MWR services are provided during the initial deployment and early sustainment phase of military operations</li>
-        </ul>
-      </p>
+      <ul>
+        <li>Fosters community pride, Soldier morale, and Family wellness </li>
+        <li>Eases the impact of unique aspects of military life</li>
+        <li>Only minimum MWR services are provided during the initial deployment and early sustainment phase of military operations</li>
+      </ul>
       <p><b style='color:red;'>
         *Plan MWR operations include unit recreation, sports programs, and R&R areas for military and deployed DOD and DA Civilian personnel
       </b></p>
@@ -49,5 +47,8 @@ export default {
 }
 .body-text {
   text-align: left;
+}
+li {
+  margin-bottom: 15px;
 }
 </style>
