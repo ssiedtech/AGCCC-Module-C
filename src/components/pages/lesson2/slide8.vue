@@ -2,15 +2,13 @@
   <div class="page" id="content">
     <div class="title">Principles of the MWR Program</div>
     <div class="body-text">
-      <p>
-       <ul>
-          <li>Designed to meet the needs of the garrison Community – this includes Soldiers, units, retirees, civilian employees, and families</li>
-          <li>Prioritized based on their impact on readiness</li>
-          <li>Support readiness, well-being, recruiting, and retention of highly qualified Soldiers</li>
-          <li>Nonappropriated funds are returned to Soldiers, their Families, and other authorized patrons by providing needed MWR programs, services, and capital improvements</li>
-          <li>Program management is based on long-range planning, generation of NAF resources, and application of authorized APF resources to meet current operating requirements while providing for reinvestment in programs, facilities, and equipment.</li>
-        </ul>
-      </p>
+      <ul>
+        <li>Designed to meet the needs of the garrison Community - this includes Soldiers, units, retirees, civilian employees, and families</li>
+        <li>Prioritized based on their impact on readiness</li>
+        <li>Support readiness, well-being, recruiting, and retention of highly qualified Soldiers</li>
+        <li>Nonappropriated funds are returned to Soldiers, their Families, and other authorized patrons by providing needed MWR programs, services, and capital improvements</li>
+        <li>Program management is based on long-range planning, generation of NAF resources, and application of authorized APF resources to meet current operating requirements while providing for reinvestment in programs, facilities, and equipment.</li>
+      </ul>
     </div>
   </div>
 
@@ -42,5 +40,8 @@ export default {
 }
 .body-text {
   text-align: left;
+}
+li {
+  margin-bottom: 15px;
 }
 </style>

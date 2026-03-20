@@ -2,16 +2,14 @@
   <div class="page" id="content">
     <div class="title">Objectives of the MWR Program</div>
     <div class="body-text">
-      <p>
-         <ul>
-          <li>Supports combat readiness and effectiveness. </li>
-          <li>Supports recruitment and retention of quality personnel.</li>
-          <li>Provides leisure time activities, which support a quality of life commensurate with generally accepted American values.</li>
-          <li>Promotes and maintains the mental and physical well-being of authorized personnel.</li>
-          <li>Fosters community pride, Soldier morale, and Family wellness and promotes unit esprit de corps.</li>
-          <li>Eases the impact of unique aspects of military life, such as frequent relocations and deployment.</li>
-        </ul>
-      </p>
+      <ul>
+        <li>Supports combat readiness and effectiveness. </li>
+        <li>Supports recruitment and retention of quality personnel.</li>
+        <li>Provides leisure time activities, which support a quality of life commensurate with generally accepted American values.</li>
+        <li>Promotes and maintains the mental and physical well-being of authorized personnel.</li>
+        <li>Fosters community pride, Soldier morale, and Family wellness and promotes unit esprit de corps.</li>
+        <li>Eases the impact of unique aspects of military life, such as frequent relocations and deployment.</li>
+      </ul>
     </div>
   </div>
 
@@ -39,5 +37,8 @@ export default {
 }
 .body-text {
   text-align: left;
+}
+li {
+  margin-bottom: 15px;
 }
 </style>
