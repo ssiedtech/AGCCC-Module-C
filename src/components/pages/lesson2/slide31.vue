@@ -3,7 +3,7 @@
     <div class="title">Scope</div>
     <div class="body-text">
       <p>
-        The intended outcome of this lesson is to produce officers who can confidently prepare and provide an MWR support plan in their future assignments. The lesson begins by reviewing a baseline of doctrinal concepts that are expected to be familiar to all US officers regardless of their basic branch. Information added to this foundation focuses on considerations S-1s must take into account when planning and providing an MWR support plan.
+        THIS IS A MULTIPLE CHOICE SLIDE
       </p>
     </div>
   </div>
@@ -27,7 +27,23 @@ export default {
 }
 </script>
 <style scoped>
+.page {
+  overflow: scroll;
+}
 .graphic {
-  width: 75%;
+  width: 40%;
+}
+.body-text {
+  text-align: left;
+}
+li {
+  margin-bottom: 15px;
+}
+.slide-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+  width: 100%;
+  /* border: 1px solid red; */
 }
 </style>
