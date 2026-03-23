@@ -3,8 +3,8 @@
     <div class="title">Human Resources Support</div>
     <div class="body-text">
       <img class="graphic" src="../../../assets/image10.png">
+      <p><b>For additional information you may refer to FM 4-1, Figure 1-1 and Para. 1-20 to 1-21.</b></p>
     </div>
-    <p><b>For additional information you may refer to FM 4-1, Figure 1-1 and Para. 1-20 to 1-21.</b></p>
   </div>
 
   <!-- NOTES -->

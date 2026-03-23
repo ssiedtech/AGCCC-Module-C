@@ -1,16 +1,10 @@
 <template>
-    <div class="container" :class="{ 'container-long': long }">
-        <div class="question" :class="{ 'question-long': long }">{{ question }}</div>
+    <div class="question-container">
+        <p class="question-text">{{ question }}</p>
         <div class="choices">
-            <button v-for="choice in choices" :key="choice" :id="choiceId(choice)"
-                :style="isSelected(choice) ? { 'background-color': '#be9854', 'color': 'white' } : null"
-                @click="selectAnswer(choice)" :class="contains(choice)">{{ choice }}
+            <button v-for="choice in choices" :key="choice" @click="selectAnswer(choice)" :class="isSelected(choice)">
+                {{ choice }}
             </button>
-        </div>
-        <div class="submit-container" v-if="!postTest">
-            <button class="submit"
-                @click="this.$store.commit('submitResults', this.currentAnswer == this.correctAnswer)">CHECK
-                ANSWER</button>
         </div>
     </div>
 </template>
@@ -21,151 +15,102 @@ export default {
     data() {
         return {
             currentAnswer: '',
+            correct: false
         }
     },
+    props: ['question', 'choices', 'correctAnswer'],
     methods: {
         selectAnswer(answer) {
             this.currentAnswer = answer
-            if (this.postTest) {
-                this.$store.commit('changeAnswer', answer)
-            }
-        },
-        isSelected(answer) {
-            if (answer == this.currentAnswer)
-                return true
+            if (this.currentAnswer == this.correctAnswer)
+                this.correct = true
             else
-                return false
+                this.correct = false
         },
-        isLongAnswer(choice) {
-            if (choice.length > 100) {
-                return true
-            }
-            else {
-                return false
-            }
-        },
-        contains(string) {
-            if (string.includes("Ill")) {
-                return 'answer-button2'
-            }
+        // will update selected buttons color to show whether the answer is correct or not. 
+        // the correct answer will not be shown if the currentAnswer prop is not set. (Use this for exams)
+        isSelected(answer) {
+            if (answer == this.currentAnswer) {
+                if (this.correctAnswer == null)
+                    return "selected"
 
-            return 'answer-button'
-        },
-        choiceId(choice) {
-            if (this.$store.state.local) {
-                if (choice == this.correctAnswer)
+                else if (answer == this.correctAnswer)
                     return "correct"
+
                 else
-                    return "incorrect"
+                    return "wrong"
             }
             else {
-                return 'ID'
+                return "choice-button"
             }
         }
     },
-    watch: {
-        savedAnswer: {
-            immediate: true,
-            // deep: true,
-            handler(val) {
-                this.currentAnswer = val
-            }
-        }
-    },
-    props: ['question', 'choices', 'correctAnswer', 'savedAnswer', 'postTest', 'long']
 }
 </script>
 
 <style scoped>
-@font-face {
-    font-family: MyWebFont;
-    src: local('Trebuchet MS');
-    unicode-range: U+006C;
-}
-
-.answer-button,
-.answer-button2 {
-    font-family: Arial, Helvetica, sans-serif;
-    display: block;
-    border: none;
-    border-radius: 125px;
-    background-color: #19213f;
-    /* color: #EBAD1B; */
-    height: 80%;
-    /* min-height: 50px; */
-    width: 65vw;
-    margin: auto;
-    /* font-size: 2.3vmin; */
-    font-size: 2vmin;
-}
-
-.answer-button2 {
-    font-family: MyWebFont, Arial, Helvetica, sans-serif;
-}
-
-.answer-button:hover {
-    color: white;
-    cursor: pointer;
-}
-
-.question {
-    margin: auto;
-    font-size: 2.2vmin;
-    white-space: pre-wrap;
-    text-align: center;
-    line-height: 130%;
-}
-
-.question-long {
-    margin: auto;
-    font-size: 2vmin;
-    white-space: pre-wrap;
-    text-align: center;
-}
-
-.submit {
-    color: black;
+.question-container {
     width: 100%;
-    max-width: 155px;
-    text-align: center;
-    height: 90%;
-    background-color: #be9854;
-    border-radius: 5px;
-    z-index: 1;
-    font-size: 100%;
-    cursor: pointer;
-    z-index: 1;
-    align-self: right;
-}
-
-.submit-container {
-    display: flex;
     height: 100%;
-    width: 95%;
-    justify-content: right;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid red; */
 }
 
-.container,
-.container-long {
-    display: grid;
-    height: 80%;
-    width: 100%;
-    /* padding-top: 5px; */
-    grid-template-rows: 18% 67% 15%;
-    grid-auto-flow: column;
-    gap: 3%;
-}
-
-.container-long {
-    grid-template-rows: 25% 60% 15%;
+.question-text {
+    width: 90%;
+    font-weight: bold;
+    white-space: pre-wrap;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .choices {
-    display: grid;
-    padding-left: 3%;
-    padding-right: 3%;
-    grid-template-rows: auto auto auto auto auto;
-    justify-content: center;
+    display: flex;
+    height: 85%;
+    /* width: 80%; */
+    min-width: 15%;
+    flex-direction: column;
+    justify-content: flex-start;
     gap: 2%;
+    /* border: 1px solid blue; */
+}
+
+.choice-button {
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #111626;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 1px 2px 1px black;
+}
+
+.wrong {
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 1px 2px 1px black;
+    background-color: orange;
+}
+
+.correct {
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 1px 2px 1px black;
+    background-color: green;
 }
 </style>
