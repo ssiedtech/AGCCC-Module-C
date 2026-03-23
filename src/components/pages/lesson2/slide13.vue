@@ -1,11 +1,8 @@
 <template>
   <div class="page" id="content">
-    <div class="title">MWR Support – Roles & Responsibilities
-</div>
+    <div class="title">MWR Support - Roles & Responsibilities</div>
     <div class="body-text">
-      <p>
-      Graphic Needed
-      </p>
+      <img class="graphic" src="../../../assets/slide14.png">
     </div>
   </div>
 
@@ -99,10 +96,10 @@ export default {
 }
 </script>
 <style scoped>
-.graphic {
-  width: 75%;
+.page {
+  overflow: scroll;
 }
-.body-text {
-  text-align: left;
+.graphic {
+  width: 65%;
 }
 </style>

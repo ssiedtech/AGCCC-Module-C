@@ -2,8 +2,7 @@
   <div class="page" id="content">
     <div class="title">Human Resources Support</div>
     <div class="body-text">
-      <img class="graphic" src="../../../assets/image10.png">
-      <p><b>For additional information you may refer to FM 4-1, Figure 1-1 and Para. 1-20 to 1-21.</b></p>
+      <img class="graphic" src="../../../assets/slide5.png">
     </div>
   </div>
 
@@ -38,7 +37,10 @@ export default {
 }
 </script>
 <style scoped>
+.page {
+  overflow: scroll;
+}
 .graphic {
-  width: 75%;
+  width: 60%;
 }
 </style>

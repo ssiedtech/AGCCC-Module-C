@@ -9,7 +9,7 @@
           <li>Programs in this category have the capability of generating enough income to cover most of their operating expenses, but they lack the ability to sustain themselves based purely on their business activity; consequently, they receive limited APF support.</li>
       </ul>
       </div>
-      <img class="graphic" src="../../../assets/image10.png">
+      <img class="graphic" src="../../../assets/slide23.png">
     </div>
   </div>
 
@@ -38,7 +38,7 @@ export default {
   overflow: scroll;
 }
 .graphic {
-  width: 40%;
+  width: 20%;
 }
 .body-text {
   text-align: left;
