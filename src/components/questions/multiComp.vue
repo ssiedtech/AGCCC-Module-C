@@ -99,7 +99,7 @@ export default {
     cursor: pointer;
     padding: 10px;
     box-shadow: 1px 2px 1px black;
-    background-color: orange;
+    background-color: #a82a39;
 }
 
 .correct {
