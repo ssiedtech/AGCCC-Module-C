@@ -2,7 +2,7 @@
   <div class="page" id="content">
     <div class="title">Operational Variables (OE)</div>
     <div class="body-text">
-      <img class="graphic" src="../../../assets/image10.png">
+      <img class="graphic" src="../../../assets/slide3.png">
     </div>
   </div>
 
@@ -54,6 +54,9 @@ export default {
 }
 </script>
 <style scoped>
+.page {
+  overflow: scroll;
+}
 .graphic {
   width: 75%;
 }

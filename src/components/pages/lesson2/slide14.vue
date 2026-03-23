@@ -2,9 +2,7 @@
   <div class="page" id="content">
     <div class="title">Battlefield Flow</div>
     <div class="body-text">
-      <p>
-        Graphic Needed
-      </p>
+      <img class="graphic" src="../../../assets/slide15.png">
     </div>
   </div>
 
@@ -27,10 +25,10 @@ export default {
 }
 </script>
 <style scoped>
-.graphic {
-  width: 75%;
+.page {
+  overflow: scroll;
 }
-.body-text {
-  text-align: left;
+.graphic {
+  width: 70%;
 }
 </style>

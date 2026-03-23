@@ -11,7 +11,7 @@
           <li>ARC National HQ is responsible for supplying the staff and managing and monitoring ARC operations in the field</li>
         </ul>
       </div>
-      <img class="graphic" src="../../../assets/image10.png">
+      <img class="graphic" src="../../../assets/slide27.png">
     </div>
   </div>
 
@@ -39,7 +39,7 @@ export default {
   overflow: scroll;
 }
 .graphic {
-  width: 40%;
+  width: 45%;
 }
 .body-text {
   text-align: left;

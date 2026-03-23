@@ -2,9 +2,7 @@
   <div class="page" id="content">
     <div class="title">NAFI Group 1-3</div>
     <div class="body-text">
-      <p>
-        Graphic
-      </p>
+      <img class="graphic" src="../../../assets/slide19.png">
     </div>
   </div>
 
@@ -57,10 +55,10 @@ export default {
 }
 </script>
 <style scoped>
+.page {
+  overflow: scroll;
+}
 .graphic {
   width: 75%;
-}
-.body-text {
-  text-align: left;
 }
 </style>

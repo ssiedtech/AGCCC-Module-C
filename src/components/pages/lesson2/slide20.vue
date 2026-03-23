@@ -8,7 +8,7 @@
           <li>Programs in this category have little or no capacity for generating NAF income and are supported almost entirely with APFs</li>
       </ul>
       </div>
-      <img class="graphic" src="../../../assets/image10.png">
+      <img class="graphic" src="../../../assets/slide21.png">
     </div>
   </div>
 
@@ -35,7 +35,7 @@ export default {
   overflow: scroll;
 }
 .graphic {
-  width: 40%;
+  width: 18%;
 }
 .body-text {
   text-align: left;

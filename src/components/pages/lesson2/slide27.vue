@@ -13,7 +13,7 @@
           tactical operations</li>
         </ul>
       </div>
-      <img class="graphic" src="../../../assets/image10.png">
+      <img class="graphic" src="../../../assets/slide28.png">
     </div>
   </div>
 
@@ -43,7 +43,7 @@ export default {
   overflow: scroll;
 }
 .graphic {
-  width: 40%;
+  width: 24%;
 }
 .body-text {
   text-align: left;

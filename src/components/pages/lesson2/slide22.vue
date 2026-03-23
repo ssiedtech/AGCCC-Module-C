@@ -10,7 +10,7 @@
           <li>The ability to generate revenues is limited, however, and in no case are sustainable without substantial APF support</li>
       </ul>
       </div>
-      <img class="graphic" src="../../../assets/image10.png">
+      <img class="graphic" src="../../../assets/slide23.png">
     </div>
   </div>
 
@@ -37,7 +37,7 @@ export default {
   overflow: scroll;
 }
 .graphic {
-  width: 40%;
+  width: 28%;
 }
 .body-text {
   text-align: left;

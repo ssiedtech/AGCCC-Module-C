@@ -14,7 +14,7 @@
           </ul>
         </ul>
       </div>
-      <img class="graphic" src="../../../assets/image10.png">
+      <img class="graphic" src="../../../assets/slide29.png">
     </div>
   </div>
 
@@ -41,7 +41,7 @@ export default {
   overflow: scroll;
 }
 .graphic {
-  width: 40%;
+  width: 25%;
 }
 .body-text {
   text-align: left;
