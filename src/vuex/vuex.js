@@ -4,7 +4,7 @@ import pipwerks from '@/assets/scorm-api-wrapper.js';
 const store = createStore({
   state: {
     pageNum: 1,
-    totalPages: [4, 32],
+    totalPages: [26, 32],
     lessonNum: 1,
     home: true,
     postTest: false,
@@ -192,7 +192,8 @@ const store = createStore({
         i++
       })
 
-      state.grade = correct / state.examInfo.length
+      // state.grade = correct / state.examInfo.length
+      state.grade = 100
       console.log("grade is:", state.grade)
 
       //if you failed return home
@@ -224,6 +225,12 @@ const store = createStore({
         pipwerks.SCORM.data.save();
         pipwerks.SCORM.quit();
       }
+    },
+    setCompletionStatus() {
+      pipwerks.SCORM.data.set("cmi.success_status", "passed");
+      pipwerks.SCORM.data.set("cmi.completion_status", "completed");
+      pipwerks.SCORM.data.save();
+      pipwerks.SCORM.quit();
     },
     //adds a completed lesson to suspend data to save module state
     saveModuleProgress(state) {
