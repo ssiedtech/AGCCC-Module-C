@@ -1,10 +1,31 @@
 <template>
   <div class="page" id="content">
-    <div class="title">Enlisted Promotion System Objectives</div>
+    <div class="title">Personnel Support Functions for Command Interest Programs (CIP)
+  </div>
     <div class="body-text">
-      <!-- <img class="graphic" src="../../../assets/image11.png"> -->
+      <ul>
+        <li> CIPs are of general interest to organizations and Soldiers</li>
+        <li>Some programs that traditionally fall within the purview are provided as examples to
+          understand the principles of support involved but should not be considered all-inclusive</li>
+        <li>Generally have five key components</li>
+          <ul>
+            <li>Responsible agent or agency</li>
+            <li>Regulatory or statutory guidance</li>
+            <li>Checklist</li>
+            <li>Compliance protocols</li>
+            <li>Reporting requirements</li>
+          </ul>
+      </ul>
     </div>
   </div>
+
+  <!-- NOTES -->
+  <Teleport to="#notes-comp">
+    <p>
+      N/A
+    </p>
+  </Teleport>
+
 </template>
 
 <script>
@@ -19,5 +40,11 @@ export default {
 <style scoped>
 .graphic {
   width: 75%;
+}
+.body-text {
+  text-align: left;
+}
+li {
+  margin-bottom: 15px;
 }
 </style>
