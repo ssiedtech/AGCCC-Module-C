@@ -2,12 +2,8 @@
   <div class="page" id="content">
     <div class="title">MWR Support - Roles & Responsibilities</div>
     <div class="body-text">
-      <img class="graphic" src="../../../assets/slide14.png">
+      <ImageModal class="graphic" :filename="'slide14.png'" :width="'100%'" :height="'80%'" />
     </div>
-    <!-- <div class="body-text">
-      <ImageModal class="graphic" :filename="'slide14.png'" :width="'80%'" :height="'60%'" />
-    </div> -->
-
   </div>
 
   <!-- NOTES -->
@@ -91,12 +87,16 @@
 </template>
 
 <script>
+import ImageModal from '@/components/ImageModal.vue'
 
 export default {
   name: 'slideOne',
   mounted() {
     this.$store.commit('pageloaded')
-  }
+  },
+  components: {
+    ImageModal,
+  },
 }
 </script>
 <style scoped>
