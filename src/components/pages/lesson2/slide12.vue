@@ -2,7 +2,7 @@
   <div class="page" id="content">
     <div class="title">Battlefield Flow</div>
     <div class="body-text">
-      <img class="graphic" src="../../../assets/slide13.png">
+      <ImageModal class="graphic" :filename="'slide13.png'" :width="'80%'" :height="'60%'" />
     </div>
   </div>
 
@@ -24,12 +24,16 @@
 </template>
 
 <script>
+import ImageModal from '@/components/ImageModal.vue'
 
 export default {
   name: 'slideOne',
   mounted() {
     this.$store.commit('pageloaded')
-  }
+  },
+  components: {
+    ImageModal,
+  },
 }
 </script>
 <style scoped>
@@ -37,12 +41,11 @@ export default {
   overflow: scroll;
 }
 .graphic {
-  width: 65%;
+  /* width: 65%; */
 }
 .body-text {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid red; */
 }
 </style>
