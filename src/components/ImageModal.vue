@@ -34,22 +34,13 @@ export default {
 
 <style scoped>
 .frame {
-  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   width: v-bind(width);
   height: v-bind(height);
   margin: auto;
-}
-
-.relative-frame {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: v-bind(width);
-  height: v-bind(height);
+  /* border: 1px solid blue;  */
 }
 
 .slideImg {
@@ -61,13 +52,6 @@ export default {
 
 .slideImg:hover {
   opacity: 0.7;
-}
-
-.relative-slideImg {
-  max-width: 100%;
-  max-height: 100%;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
 .modal {
@@ -135,7 +119,7 @@ figcaption {
 
 /* The Close Button */
 .close {
-  color: #be9864;
+  color: white;
   font-size: 6vw;
   font-weight: bold;
   align-self: flex-start;

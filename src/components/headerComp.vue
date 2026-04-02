@@ -88,7 +88,6 @@ export default {
 
 .notes-icon {
   height: 45%;
-  /* border: 1px solid red; */
 }
 
 .crest-icon {

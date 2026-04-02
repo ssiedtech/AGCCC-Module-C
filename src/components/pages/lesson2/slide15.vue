@@ -1,6 +1,6 @@
 <template>
   <div class="page" id="content">
-    <div class="title">Check on Learning - LSA #1</div>
+    <div class="title">Check on Learning - LSA #2</div>
     <div class="body-text">Complete a Check on Learning to summarize the Learning Activity and assess your understanding of the material presented in this LSA.</div>
     <div class="content-box">
 

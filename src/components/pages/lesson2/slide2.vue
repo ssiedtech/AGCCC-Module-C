@@ -2,7 +2,7 @@
   <div class="page" id="content">
     <div class="title">Operational Variables (OE)</div>
     <div class="body-text">
-      <img class="graphic" src="../../../assets/slide3.png">
+      <ImageModal class="graphic" :filename="'slide3.png'" :width="'70%'" :height="'60%'" />
     </div>
   </div>
 
@@ -45,19 +45,28 @@
 </template>
 
 <script>
+import ImageModal from '@/components/ImageModal.vue'
 
 export default {
   name: 'slideOne',
   mounted() {
     this.$store.commit('pageloaded')
-  }
+  },
+  components: {
+    ImageModal,
+  },
 }
 </script>
 <style scoped>
 .page {
   overflow: scroll;
 }
+
 .graphic {
-  width: 75%;
+  /* margin: none; */
+}
+
+.body-text {
+  /* border: 1px solid red; */
 }
 </style>

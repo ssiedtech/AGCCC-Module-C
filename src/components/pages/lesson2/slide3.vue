@@ -4,7 +4,7 @@
     <div class="body-text">
       <p><b>ACTION:</b></p>
         <br/>
-        Manage Morale, Welfare, and Recreation Support Pan for Deployed Forces
+        Manage Morale, Welfare, and Recreation Support Plan for Deployed Forces
       
 
       <p><b>CONDITION:</b></p>

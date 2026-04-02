@@ -1,6 +1,6 @@
 <template>
   <div class="page" id="content">
-    <div class="title">Summary</div>
+    <div class="title">Summary LSA #3</div>
     <div class="body-text">
       <p>
         During this block of instruction, we have reviewed Military MWR programs and nonappropriated fund instrumentalities (NAFIs), group structure, funding categories and other MWR Services.
