@@ -1,10 +1,8 @@
 <template>
   <div class="page" id="content">
-    <div class="title">Interpret The Roles and Responsibiltiies for MWR Support</div>
+    <div class="title">Battlefield Flow</div>
     <div class="body-text">
-      <p>
-        No Text Included
-      </p>
+      <img class="graphic" src="../../../assets/slide13.png">
     </div>
   </div>
 
@@ -35,10 +33,16 @@ export default {
 }
 </script>
 <style scoped>
+.page {
+  overflow: scroll;
+}
 .graphic {
-  width: 75%;
+  width: 65%;
 }
 .body-text {
-  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid red; */
 }
 </style>

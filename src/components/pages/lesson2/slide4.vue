@@ -2,7 +2,7 @@
   <div class="page" id="content">
     <div class="title">Human Resources Support</div>
     <div class="body-text">
-      <img class="graphic" src="../../../assets/slide5.png">
+      <ImageModal class="graphic" :filename="'slide5.png'" :width="'100%'" :height="'60%'" />
     </div>
   </div>
 
@@ -28,12 +28,16 @@
 </template>
 
 <script>
+import ImageModal from '@/components/ImageModal.vue'
 
 export default {
   name: 'slideOne',
   mounted() {
     this.$store.commit('pageloaded')
-  }
+  },
+  components: {
+    ImageModal,
+  },
 }
 </script>
 <style scoped>
@@ -42,5 +46,11 @@ export default {
 }
 .graphic {
   width: 60%;
+}
+
+.body-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

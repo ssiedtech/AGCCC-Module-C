@@ -4,6 +4,10 @@
     <div class="body-text">
       <img class="graphic" src="../../../assets/slide14.png">
     </div>
+    <!-- <div class="body-text">
+      <ImageModal class="graphic" :filename="'slide14.png'" :width="'80%'" :height="'60%'" />
+    </div> -->
+
   </div>
 
   <!-- NOTES -->
@@ -101,5 +105,11 @@ export default {
 }
 .graphic {
   width: 65%;
+}
+.body-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid red; */
 }
 </style>
