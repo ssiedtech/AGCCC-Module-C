@@ -10,7 +10,8 @@
     </div>
 
     <div class="icons">
-      <img @click="this.toggleNotes()" class="notes-icon" src="../assets/notes.png">
+      <img v-if="!this.emptyNotes" @click="this.toggleNotes()" class="notes-icon" src="../assets/notes.png">
+      <img v-if="this.emptyNotes" class="notes-icon" src="../assets/notes_grey.png">
       <img class="crest-icon" src="../assets/ags_crest.png">
     </div>
   </div>
@@ -25,6 +26,11 @@ export default {
   components: {
     notesComp,
   },
+  data() {
+    return {
+      disableNotes: false,
+    }
+  },
   methods: {
     goHome() {
       if (!this.$store.state.postTest && !this.$store.state.completed)
@@ -35,7 +41,22 @@ export default {
         this.$store.state.showNotes = !this.$store.state.showNotes;
       }
     }
-  }
+  },
+  computed: {
+    emptyNotes() {
+        return this.$store.state.disableNotes
+    }
+  },
+  // watch: {
+  //   disableNotes() {
+  //     if (this.$store.state.disableNotes) {
+  //       this.disableNotes = true
+  //     }
+  //     else {
+  //       this.disableNotes = false
+  //     }
+  //   }
+  // },
 }
 </script>
 

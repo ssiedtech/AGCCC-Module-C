@@ -11,8 +11,8 @@
                     <div class="box2">
                         <div class="lines2"></div>
                     </div>
-
-                    <div class="notesText" id="notes-comp"></div>
+                    
+                    <div class="notesText" id="notes-comp" ref="teleportTarget"></div> <!-- Observer Ref to catch teleport event -->
 
                     <div class="box3">
                         <div class="lines3"></div>
@@ -31,15 +31,42 @@
 <script>
 
 export default {
-  name: 'notesComp',
-  components: {
-  },
-  mounted() {
-    console.log("Notes has reached Mounted()")
-  },
-  beforeUnmount() {
-    console.log("Notes has reached beforeUnmount()")
-  }
+    name: 'notesComp',
+    data() {
+        return {
+            // currentNotes: '',
+        }
+    },
+    mounted() {
+        // Create observer for $teleportTarget ref
+        this.observer = new MutationObserver(() => {
+            this.checkIfEmpty();
+        });
+
+        // watch teleport div for child changes
+        if (this.$refs.teleportTarget) {
+        this.observer.observe(this.$refs.teleportTarget, { 
+            childList: true 
+        });
+        }
+    },
+    methods: {
+        checkIfEmpty() {
+            let currentTextContent = this.$refs.teleportTarget.textContent.trim()
+            // console.log("!!", currentTextContent)
+
+            if(currentTextContent === ""){
+                // this.$store.commit('lockNotes')
+                //This is currently commented out because it is causing a jitter effect on the icon
+            }
+            else if(currentTextContent === "N/A") {
+                this.$store.commit('lockNotes')
+            }
+            else {
+                this.$store.commit('unlockNotes')
+            }
+        }
+    },
 }
 </script>
 
