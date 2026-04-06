@@ -10,7 +10,7 @@
     </div>
 
     <div class="icons">
-      <img v-if="!this.emptyNotes && !this.$store.state.home" @click="this.toggleNotes(); this.$store.commit('unlockNav')" class="notes-icon" src="../assets/notes.png">
+      <img :class="{ notOpened: this.navLockState }" v-if="!this.emptyNotes && !this.$store.state.home" @click="this.toggleNotes(); this.$store.commit('unlockNav')" class="notes-icon" src="../assets/notes.png">
       <img v-if="this.emptyNotes && !this.$store.state.home" class="notes-icon" src="../assets/notes_grey.png">
       <img class="crest-icon" src="../assets/ags_crest.png">
     </div>
@@ -45,7 +45,10 @@ export default {
   computed: {
     emptyNotes() {
         return this.$store.state.disableNotes
-    }
+    },
+    navLockState() {
+      return this.$store.state.navLock
+    },
   },
 }
 </script>
@@ -126,5 +129,22 @@ export default {
   color: white;
   font-size: 2vmin;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.notOpened {
+  /* border: 1px solid red; */
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.10);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>
