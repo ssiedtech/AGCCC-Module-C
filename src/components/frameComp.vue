@@ -50,6 +50,7 @@ export default {
         else {
             this.active = true
         }
+        this.active = true
     },
     computed: {
         asyncPageName() {
@@ -79,7 +80,26 @@ export default {
         isHome() {
             return this.$store.state.home
         }
-    }
+    },
+    // watch: {
+    //     asyncPageName: {
+    //         handler() {
+    //             console.log("currentNotes Changed!")
+    //             console.log(this.asyncPageName)
+    //             console.log(currentNotes)
+    //             if(this.currentNotes === "<p>N/A</p>") {
+    //                 return true
+    //             }
+    //             else if (this.currentNotes === "") {
+    //                 return true
+    //             }
+    //             else {
+    //                 return false
+    //             }
+    //         },
+    //         deep: true
+    //     }
+    // }
 }
 </script>
 

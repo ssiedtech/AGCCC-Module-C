@@ -22,6 +22,7 @@ const store = createStore({
     examAnswers: [],
     showNotes: false,
     inLesson: false,
+    disableNotes: false,
     lessonTitles: [
       "Manage Command Interest Programs at the S-1 Level",
       "Manage Unit Morale, Welfare and Recreation (MWR) Operations",
@@ -42,6 +43,14 @@ const store = createStore({
     prevPage(state) {
       state.pageNum -= 1
       state.navLock = false
+    },
+    lockNotes(state) {
+      state.disableNotes = true
+      // console.log("locked notes")
+    },
+    unlockNotes(state) {
+      state.disableNotes = false
+      // console.log("unlocked notes")
     },
     navToggle(state, payload) {
       //if COL check if already completed
