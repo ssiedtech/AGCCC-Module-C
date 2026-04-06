@@ -1,8 +1,11 @@
 <template>
   <div class="page" id="content">
     <div class="title">Army Emergency Relief (AER)</div>
-    <div class="body-text">
+    <!-- <div class="body-text">
       <img class="graphic" src="../../../assets/slide18_a.png">
+    </div> -->
+    <div class="body-text">
+      <ImageModal class="graphic" :filename="'slide18_a.png'" :width="'100%'" :height="'80%'" />
     </div>
   </div>
 
@@ -27,12 +30,16 @@
 </template>
 
 <script>
+import ImageModal from '@/components/ImageModal.vue'
 
 export default {
   name: 'slideOne',
   mounted() {
     this.$store.commit('pageloaded')
-  }
+  },
+  components: {
+    ImageModal,
+  },
 }
 </script>
 <style scoped>
@@ -41,5 +48,11 @@ export default {
 }
 .graphic {
   width: 70%;
+}
+.body-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid red; */
 }
 </style>

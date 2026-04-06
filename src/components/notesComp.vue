@@ -53,10 +53,8 @@ export default {
     methods: {
         checkIfEmpty() {
             let currentTextContent = this.$refs.teleportTarget.textContent.trim()
-            // console.log("!!", currentTextContent)
 
             if(currentTextContent === ""){
-                // this.$store.commit('lockNotes')
                 //This is currently commented out because it is causing a jitter effect on the icon
             }
             else if(currentTextContent === "N/A") {
