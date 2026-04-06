@@ -23,6 +23,7 @@ const store = createStore({
     showNotes: false,
     inLesson: false,
     disableNotes: false,
+    testing: false,
     lessonTitles: [
       "Manage Command Interest Programs at the S-1 Level",
       "Manage Unit Morale, Welfare and Recreation (MWR) Operations",
@@ -50,7 +51,25 @@ const store = createStore({
     },
     unlockNotes(state) {
       state.disableNotes = false
-      // console.log("unlocked notes")
+
+      //If there are notes, we are locking them until they are opened
+      state.navLock = true
+
+      //for testing:
+      if(state.testing) {
+        state.navLock = false
+      }
+    },
+    lockNav(state) {
+      state.navLock = true
+
+      //for testing:
+      if(state.testing) {
+        state.navLock = false
+      }
+    },
+    unlockNav(state) {
+      state.navLock = false
     },
     navToggle(state, payload) {
       //if COL check if already completed
