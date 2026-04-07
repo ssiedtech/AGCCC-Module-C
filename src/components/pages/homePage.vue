@@ -12,23 +12,16 @@
       </span>
 
     </div>
-    <MultiModal v-if="modal" @click="modal = false">
-      <div>Please complete all lessons before attempting the Post-Test.</div>
-    </MultiModal>
   </div>
 </template>
 
 <script>
-import MultiModal from '@/components/MultiModal.vue'
 
 export default {
   name: 'homePage',
-  components: {
-    MultiModal
-  },
   data() {
     return {
-      modal: false,
+      modal: true,
       finalGrid: '4 / 1'
     }
   },
