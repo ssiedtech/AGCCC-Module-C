@@ -28,7 +28,6 @@
 import headerComp from "./components/headerComp.vue"
 import frameComp from "./components/frameComp.vue"
 import MultiModal from './components/MultiModal.vue'
-import examInfo from './data/exam.json'
 import pipwerks from '@/assets/scorm-api-wrapper.js'
 
 export default {
@@ -39,16 +38,6 @@ export default {
     MultiModal
   },
   mounted() {
-    let url = window.location.origin
-    if (url.includes('http://localhost:')) {
-      this.$store.commit('local')
-    }
-    console.log("LOCAL", this.$store.state.local)
-    this.$store.state.examInfo = examInfo.postTest
-    this.$store.commit('shuffleExam')
-    this.$store.commit('initializeExamAnswers')
-    console.log(this.$store.state.examAnswers)
-
     //pull back saved state if it exists
     let completeLessons = pipwerks.SCORM.get(`cmi.suspend_data`)
     console.log("app mounted:", completeLessons)
@@ -66,7 +55,7 @@ export default {
   },
   methods: {
     closeModal() {
-      this.$store.commit('shuffleExam')
+      // this.$store.commit('shuffleExam')
       this.$store.commit('closeModal')
     }
   }
