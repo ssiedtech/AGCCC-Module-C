@@ -32,6 +32,11 @@
             <li>Ready and Resilient (R2) Program</li>
             <li>Quality of Life and Family Programs</li>
         </ul>
+
+        <div style="text-align: center;">
+          <button class="homebutton" @click="this.$store.commit('goHome')">Return to Home Page</button>
+        </div>
+
     </div>
   </div>
 
@@ -47,17 +52,21 @@
 <script>
 export default {
   name: 'slideOne',
-  mounted() {
+  async mounted() {
     this.$store.commit('pageloaded')
+    this.$store.commit('setLessonComplete', 0)
+    await this.$store.commit('saveModuleProgress')
   }
 }
 </script>
 <style scoped>
-.graphic {
-  width: 75%;
+.page {
+  overflow: scroll;
 }
 .body-text {
   text-align: left;
+  overflow: scroll;
+  /* border: 1px solid red; */
 }
 li {
   margin-bottom: 15px;

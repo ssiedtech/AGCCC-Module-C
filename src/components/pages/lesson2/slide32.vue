@@ -10,6 +10,11 @@
         <li>Responsible Agencies, Roles and Responsibilities for MWR Support and Battlefield Flow</li>
         <li>Military MWR programs and nonappropriated fund instrumentalities (NAFIs), group structure, funding categories and other MWR Services</li>
       </ul>
+
+      <div style="text-align: center;">
+        <button class="homebutton" @click="this.$store.commit('goHome')">Return to Home Page</button>
+      </div>
+
     </div>
   </div>
 
@@ -26,8 +31,10 @@
 
 export default {
   name: 'slideOne',
-  mounted() {
+  async mounted() {
     this.$store.commit('pageloaded')
+    this.$store.commit('setLessonComplete', 1)
+    await this.$store.commit('saveModuleProgress')
   }
 }
 </script>

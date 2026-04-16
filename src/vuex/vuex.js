@@ -24,6 +24,7 @@ const store = createStore({
     inLesson: false,
     disableNotes: false,
     testing: false,
+    moduleComplete: false,
     lessonTitles: [
       "Manage Command Interest Programs at the S-1 Level",
       "Manage Unit Morale, Welfare and Recreation (MWR) Operations",
@@ -47,7 +48,6 @@ const store = createStore({
     },
     lockNotes(state) {
       state.disableNotes = true
-      // console.log("locked notes")
     },
     unlockNotes(state) {
       state.disableNotes = false
@@ -117,7 +117,7 @@ const store = createStore({
       }
     },
     changeLesson(state, payload) {
-      console.log("changing to lesson: ", payload)
+      // console.log("changing to lesson: ", payload)
       state.lessonNum = payload
       state.pageNum = 1
       state.missedCOL = 0
@@ -130,135 +130,29 @@ const store = createStore({
       state.completed = false
       state.navLock = false
       state.showNotes = false
-    },
-    goPostTest(state) {
-      state.lessonNum = state.lessonTitles.length
-      state.pageNum = 1
-      state.home = false
-      state.postTest = true
-      state.navLock = false
+      console.log("Lessons Complete:", state.lessonsCompleted)
     },
     setLessonComplete(state, payload) {
+      console.log("setting lesson ", payload, "complete")
       state.lessonsCompleted[payload] = true;
     },
-    shuffleExam(state) {
-      // randomize the order of the questions
-      let ans = state.examInfo
-      state.examInfo = []
-      for (let length = ans.length; length > 0; length--) {
-        let i = Math.floor(Math.random() * (length - 1 + 1)) + 1
-
-        // Ramdomizes the order of the choices of the question unless the question is a True or False
-        if (ans[i - 1].questionType != "True or False") {
-          let choices = ans[i - 1].selections
-          ans[i - 1].selections = []
-          //Check for an 'All the Above' answer to ensure its still at the bottom after a shuffle
-          let ATA = false
-          for (let len = choices.length; len > 0; len--) {
-            let j = Math.floor(Math.random() * (len - 1 + 1)) + 1
-            if (choices[j - 1] == "All the Above") {
-              ATA = true
-            }
-            else {
-              ans[i - 1].selections.push(choices[j - 1])
-              choices.splice(j - 1, 1);
-            }
-          }
-          if (ATA) {
-            ans[i - 1].selections.push("All the Above")
-          }
-        }
-
-        // If a matching question, Randomized the order of definitions
-        if (ans[i - 1].questionType == "Matching") {
-          let def = ans[i - 1].definitions
-          ans[i - 1].definitions = []
-          for (let len = def.length; len > 0; len--) {
-            let j = Math.floor(Math.random() * (len - 1 + 1)) + 1
-            ans[i - 1].definitions.push(def[j - 1])
-            def.splice(j - 1, 1);
-          }
-        }
-
-        state.examInfo.push(ans[i - 1])
-        ans.splice(i - 1, 1);
-      }
-    },
-    initializeExamAnswers(state) {
-      for (let i = 0; i < state.totalPages[state.lessonTitles.length - 1]; i++) {
-        state.examAnswers.push(null)
-      }
-    },
-    changeAnswer(state, payload) {
-      state.examAnswers[state.pageNum - 1] = payload;
-      console.log(state.examAnswers)
-    },
-    submitPostTest(state) {
-      let correct = 0
-      let i = 0
-      state.examInfo.forEach(value => {
-        if (state.examAnswers[i] != null) {
-          if (value.questionType == "Matching") {
-            let j = 0
-            let subcorrect = 0
-            value.definitions.forEach(def => {
-              if (def.key == state.examAnswers[i][j]) {
-                subcorrect++
-              }
-              j++
-            })
-            if (subcorrect == value.definitions.length) {
-              correct++
-            }
-          }
-          else {
-            if (value.correctAnswer == state.examAnswers[i]) {
-              correct++
-            }
-          }
-        }
-        i++
-      })
-
-      // state.grade = correct / state.examInfo.length
-      state.grade = 100
-      console.log("grade is:", state.grade)
-
-      //if you failed return home
-      if (state.grade < 0.80) {
-        state.home = true
-        state.completed = false
-        state.navLock = false
-        state.failedTest = true
-
-        //reset exam answers
-        state.examAnswers = new Array()
-        for (let i = 0; i < state.totalPages[state.lessonTitles.length - 1]; i++) {
-          state.examAnswers.push(null)
+    //sets state.moduleComplete to true if all lessons complete and pushes SCORM completions
+    allLessonsComplete(state) {
+      let isComplete = true
+      for(let i = 0; i < state.lessonsCompleted.length; i++) {
+        if(state.lessonsCompleted[i] == false) {
+          isComplete = false
         }
       }
-      //you passed the test
-      else {
-        state.completed = true
-        state.postTest = false
-        console.log(correct)
-        console.log(state.grade)
-
-        pipwerks.SCORM.data.set("cmi.score.min", "0");
-        pipwerks.SCORM.data.set("cmi.score.max", "100");
-        pipwerks.SCORM.data.set("cmi.score.raw", `${(state.grade * 100).toFixed(2)}`);
-        pipwerks.SCORM.data.set("cmi.score.scaled", `${state.grade}`);
+      if(isComplete) {
+        state.moduleComplete = true
+        pipwerks.SCORM.data.set("cmi.score.raw", "100");
+        pipwerks.SCORM.data.set("cmi.score.scaled", "1");
         pipwerks.SCORM.data.set("cmi.success_status", "passed");
         pipwerks.SCORM.data.set("cmi.completion_status", "completed");
         pipwerks.SCORM.data.save();
         pipwerks.SCORM.quit();
       }
-    },
-    setCompletionStatus() {
-      pipwerks.SCORM.data.set("cmi.success_status", "passed");
-      pipwerks.SCORM.data.set("cmi.completion_status", "completed");
-      pipwerks.SCORM.data.save();
-      pipwerks.SCORM.quit();
     },
     //adds a completed lesson to suspend data to save module state
     saveModuleProgress(state) {
@@ -280,9 +174,6 @@ const store = createStore({
         pipwerks.SCORM.data.set(`cmi.suspend_data`, newProgress)
       }
     },
-    local(state) {
-      state.local = true
-    }
   }
 });
 

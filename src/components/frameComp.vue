@@ -192,30 +192,19 @@ export default {
 }
 
 .homebutton {
-    color: black;
+    color: white;
     width: 100%;
     max-width: 455px;
     text-align: center;
     margin-top: 8vmin;
     height: 7vh;
-    background-color: #be9854;
+    background-color: #555656;
     border-radius: 5px;
     z-index: 1;
     font-size: 100%;
     cursor: pointer;
     z-index: 1;
 }
-
-/* .total-percent-lesson { 
-    border-radius: 10px;
-    position: absolute;
-    bottom: 3%;
-    right: 2%;
-    z-index: 2;
-    background: #BEBEBF;
-    width: 10%;
-    height: 1%;
-} */
 
 .total-percent-lesson { 
     border-radius: 10px;

@@ -6,16 +6,23 @@
       <span v-for="(titles, index) in $store.state.lessonTitles" :key="titles">
         <button v-if="index != $store.state.lessonTitles.length" class="lesson" :id="'lesson '+ (index + 1)"
           @click="this.$store.commit('changeLesson', index + 1)">
-          <span v-html="titles"></span>
-          <img src="../../assets/checkbox.svg" class="checkbox" v-if="$store.state.lessonsCompleted[index]" />
+          <span class="button-title" v-html="titles"></span>
+          <div class="checkbox-container">
+            <img class="checkbox" src="../../assets/checkbox.svg" v-if="$store.state.lessonsCompleted[index]" />
+          </div>
+          
         </button>
       </span>
 
     </div>
+    <MultiModal v-if="moduleComplete" @click="modal = false">
+      <div>You have completed Module C. You can now safely close this window.</div>
+    </MultiModal>
   </div>
 </template>
 
 <script>
+import MultiModal from '@/components/MultiModal.vue'
 
 export default {
   name: 'homePage',
@@ -24,6 +31,9 @@ export default {
       modal: true,
       finalGrid: '4 / 1'
     }
+  },
+  components: {
+    MultiModal
   },
   //set grid of post test to be at the bottom based on amount of lessons
   mounted() {
@@ -34,16 +44,16 @@ export default {
       column = 2
 
     this.finalGrid = `${row}/${column}`
-    console.log(this.finalGrid)
+    // console.log(this.finalGrid)
+
+    this.$store.commit('allLessonsComplete')
+
   },
-  methods: {
-    goToPostTest() {
-      if (this.$store.state.lessonsCompleted.includes(false))
-        this.modal = true
-      else
-        this.$store.commit('goPostTest')
+  computed: {
+    moduleComplete() {
+        return this.$store.state.moduleComplete
     },
-  }
+  },
 }
 </script>
 
@@ -65,35 +75,33 @@ export default {
 
 .button-container {
   display: flex;
-  align-self: flex-end;
-  width: 90%;
-  height: 25%;
-  /* border: 1px solid blue; */
+  width: 100%;
+  height: 40%;
   justify-content: center;
+  gap: 5%;
+  /* border: 1px solid blue; */
 }
 
-.lesson,
-.lesson-post-test {
-  width: 80%;
+.lesson {
+  width: 550px;
+  height: 50px;
   padding: 1%;
-  padding-left: 3%;
   background-color: #555656;
-  /* background-color: #111626; */
   border: none;
   font-size: 1vw;
   text-align: left;
+  text-wrap: pretty;
+  display: grid;
+  grid-template-columns: 93% 7%;
+  grid-template-rows: 100%;
+  /* border: 1px solid red; */
 }
 
-.lesson:hover,
-.lesson-post-test:hover {
+.lesson:hover {
   background: #6373ae;
   border-color: #f9e6c4;
   cursor: pointer;
 }
-
-/* .lesson-post-test {
-  grid-area: v-bind(finalGrid);
-} */
 
 .course-title {
   font-size: 1.6vw;
@@ -101,12 +109,29 @@ export default {
   text-align: center;
   font-weight: bold;
   letter-spacing: .3vmin;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.button-title {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  justify-self: flex-start;
+  align-self: center;
+}
+
+.checkbox-container {
+  width: 100%;
+  height: 100%;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  display: flex;
+  justify-content: flex-end;
   /* border: 1px solid red; */
 }
 
 .checkbox {
-  width: 3.5%;
-  float: right;
-  color: #be9854;
+  align-self: center;
+  height: 80%;
 }
 </style>
