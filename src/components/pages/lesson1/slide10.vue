@@ -27,7 +27,7 @@
   <Teleport to="#notes-comp">
     <p>
       Q1. Reference: ATP 1-0.1, Para. 5-1.<br>
-      Q1. Reference: ATP 1-0.1, Para. 5-4.
+      Q2. Reference: ATP 1-0.1, Para. 5-4.
     </p>
   </Teleport>
 

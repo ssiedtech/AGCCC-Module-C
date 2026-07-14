@@ -29,7 +29,8 @@
   <!-- NOTES -->
   <Teleport to="#notes-comp">
     <p>
-      N/A
+      Q1. Reference: AR 215-1, Para. 1-9.<br><br>
+      Q2. Reference: AR 215-1, Para. 1-11.
     </p>
   </Teleport>
 
