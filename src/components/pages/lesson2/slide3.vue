@@ -3,16 +3,14 @@
     <div class="title">Terminal Learning Objective</div>
     <div class="body-text">
       <p><b>ACTION:</b></p>
-        <br/>
-        Manage Morale, Welfare, and Recreation Support Plan for Deployed Forces
-      
+      Manage Morale, Welfare, and Recreation Support Plan for Deployed Forces
+      <br><br>
 
       <p><b>CONDITION:</b></p>
-      <br/>
         In a virtual classroom facilitation, using readings, handouts, classroom discussion, personal experiences and access to references to include AR 215-1 (Military MWR Programs and Nonappropriated Fund Instrumentalities) and FM 4-1 (Human Resources Support) and an awareness of the OE variables and actors.
 
+      <br><br>
       <p><b>STANDARD:</b></p>
-      <br/>
       <ol>
         <li>Review the Purpose, Principles, and  Objectives of the MWR program.</li>
         <li>Interpret the Roles and Responsibilities for MWR Support.</li>

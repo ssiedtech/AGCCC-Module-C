@@ -5,7 +5,7 @@
     </div>
 
     <div class="titles">
-      <div class="title-text">ADJUTANT GENERAL SCHOOL |<span class="ccc-text"> CAPTAIN CAREER COURSE</span></div>
+      <div class="title-text">ADJUTANT GENERAL SCHOOL |<span class="ccc-text"> CAPTAINS CAREER COURSE</span></div>
       <div class="lesson-title" v-if="!$store.state.home && !$store.state.completed"><span v-html="$store.state.lessonTitles[$store.state.lessonNum - 1]"></span></div>
     </div>
 
