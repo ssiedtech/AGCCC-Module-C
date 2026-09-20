@@ -145,6 +145,18 @@ const store = createStore({
         }
       }
       if(isComplete) {
+        //calculate total time spent in lesson
+        let endTime = new Date()
+        let totalSeconds = Math.floor((endTime - state.startTime) / 1000);
+        let hours = Math.floor(totalSeconds / 3600);
+        totalSeconds %= 3600;
+        let minutes = Math.floor(totalSeconds / 60);
+        let seconds = totalSeconds % 60;
+        let totalTime = `PT${hours}H${minutes}M${seconds}S`
+
+        console.log("Time spent: ", totalTime)
+        pipwerks.SCORM.data.set("cmi.session_time", totalTime);
+
         state.moduleComplete = true
         pipwerks.SCORM.data.set("cmi.score.raw", "100");
         pipwerks.SCORM.data.set("cmi.score.scaled", "1");
